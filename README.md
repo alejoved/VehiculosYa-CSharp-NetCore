@@ -1,4 +1,4 @@
-# VehiculosYa-C--NetCore
+# VehiculosYa-CSharp-NetCore
 Gestión de Vehículos y Mantenimientos
 Entidades:
 Vehicle: id, plate, brand, model
