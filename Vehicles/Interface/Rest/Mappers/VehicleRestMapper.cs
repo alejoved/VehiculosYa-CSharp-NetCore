@@ -5,9 +5,9 @@ namespace VehiculosYa.Vehicles.Interface.Rest.Mappers;
 
 public class VehicleRestMapper
 {
-    public static VehicleModel ToModel(VehicleDto dto)
+    public static Vehicle ToModel(VehicleDto dto)
     {
-        return new VehicleModel
+        return new Vehicle
         {
             Plate = dto.Plate,
             Brand = dto.Brand,
@@ -16,7 +16,7 @@ public class VehicleRestMapper
         };
     }
 
-    public static VehicleResponseDto ToDto(VehicleModel model)
+    public static VehicleResponseDto ToDto(Vehicle model)
     {
         return new VehicleResponseDto
         {

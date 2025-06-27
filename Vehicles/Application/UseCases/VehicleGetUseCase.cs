@@ -1,7 +1,7 @@
 using VehiculosYa.Vehicles.Application.Interfaces;
 using VehiculosYa.Vehicles.Domain.Models;
 
-namespace VehiculosYa.Vehicle.Application.UseCases;
+namespace VehiculosYa.Vehicles.Application.UseCases;
 
 public class VehicleGetUseCase : IVehicleGetUseCase
 {
@@ -15,7 +15,7 @@ public class VehicleGetUseCase : IVehicleGetUseCase
         throw new NotImplementedException();
     }
 
-    public Vehicle executeByPlate(string plate)
+    public Vehicle ExecuteByPlate(string plate)
     {
         throw new NotImplementedException();
     }

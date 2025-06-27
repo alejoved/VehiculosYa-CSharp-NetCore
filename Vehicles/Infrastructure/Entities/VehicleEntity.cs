@@ -13,6 +13,6 @@ namespace VehiculosYa.Vehicles.infrastructure.Entities
         [Required]
         public string Model { get; set; } = string.Empty;
         [Required]
-        public string Kms { get; set; } = string.Empty;
+        public int Kms { get; set; }
     }
 }

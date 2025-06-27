@@ -22,7 +22,7 @@ public class VehicleRepository: IVehicleRepository
         return vehicles;
     }
 
-    public async Task<VehicleModel> GetById(Guid id)
+    public async Task<Vehicle> GetById(Guid id)
     {
         VehicleEntity? vehicle = await _context.VehicleEntity.FindAsync(id);
         if (vehicle == null)
@@ -32,7 +32,7 @@ public class VehicleRepository: IVehicleRepository
         return VehicleMapper.ToModel(vehicle);
     }
 
-    public async Task<VehicleModel> GetByPlate(string plate)
+    public async Task<Vehicle> GetByPlate(string plate)
     {
         VehicleEntity? vehicle = await _context.VehicleEntity.SingleOrDefaultAsync(v => v.Plate == plate);
         if (vehicle == null)
@@ -42,7 +42,7 @@ public class VehicleRepository: IVehicleRepository
         return VehicleMapper.ToModel(vehicle);
     }
 
-    public async Task<VehicleModel> Create(VehicleModel model)
+    public async Task<Vehicle> Create(Vehicle model)
     {
         VehicleEntity entity = VehicleMapper.ToEntity(model);
         await _context.VehicleEntity.AddAsync(entity);
@@ -50,7 +50,7 @@ public class VehicleRepository: IVehicleRepository
         return VehicleMapper.ToModel(entity);
     }
 
-    public async Task<VehicleModel> Update(VehicleModel model)
+    public async Task<Vehicle> Update(Vehicle model)
     {
         VehicleEntity entity = VehicleMapper.ToEntity(model);
         _context.VehicleEntity.Update(entity);

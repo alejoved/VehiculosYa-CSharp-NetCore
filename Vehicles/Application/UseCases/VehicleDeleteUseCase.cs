@@ -1,6 +1,6 @@
 using VehiculosYa.Vehicles.Application.Interfaces;
 
-namespace VehiculosYa.Vehicle.Application.UseCases;
+namespace VehiculosYa.Vehicles.Application.UseCases;
 
 public class VehicleDeleteUseCase : IVehicleDeleteUseCase
 {

@@ -1,7 +1,7 @@
 using VehiculosYa.Vehicles.Application.Interfaces;
 using VehiculosYa.Vehicles.Domain.Models;
 
-namespace VehiculosYa.Vehicle.Application.UseCases;
+namespace VehiculosYa.Vehicles.Application.UseCases;
 
 public class VehicleUpdateUseCase : IVehicleUpdateUseCase
 {

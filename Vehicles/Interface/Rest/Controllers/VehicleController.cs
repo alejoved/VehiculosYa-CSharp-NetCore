@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using VehiculosYa.Vehicles.Application.Interfaces;
 using VehiculosYa.Vehicles.Domain.Models;
-using VehiculosYa.Vehicles.Dto;
+using VehiculosYa.Vehicles.Interface.Rest.Dtos;
 using VehiculosYa.Vehicles.Interface.Rest.Mappers;
 
-namespace VehiculosYa.Vehicle.Controller;
+namespace VehiculosYa.Vehicles.Interface.Rest.Controller;
 
 [ApiController]
 [Route("[controller]")]
@@ -25,22 +25,22 @@ public class VehicleController : ControllerBase
     [HttpGet]
     public List<VehicleResponseDto> GetAll()
     {
-        List<VehicleModel> vehicleModels = vehicleGetUseCase.Execute();
+        List<Vehicle> vehicleModels = vehicleGetUseCase.Execute();
         return vehicleModels.Select(VehicleRestMapper.ToDto).ToList();
     }
 
     [HttpGet("{id}")]
     public VehicleResponseDto GetById(Guid id)
     {
-        VehicleModel vehicleModel = vehicleGetUseCase.ExecuteById(id);
+        Vehicle vehicleModel = vehicleGetUseCase.ExecuteById(id);
         return VehicleRestMapper.ToDto(vehicleModel);
     }
 
     [HttpPost]
     public VehicleResponseDto Create(VehicleDto vehicleDto)
     {
-        VehicleModel vehicleModel = VehicleRestMapper.ToModel(vehicleDto);
-        VehicleModel response = vehicleCreateUseCase.Execute(vehicleModel);
+        Vehicle vehicle = VehicleRestMapper.ToModel(vehicleDto);
+        Vehicle response = vehicleCreateUseCase.Execute(vehicle);
         return VehicleRestMapper.ToDto(response);
 
     }
@@ -48,8 +48,8 @@ public class VehicleController : ControllerBase
     [HttpPut("{id}")]
     public VehicleResponseDto Update(VehicleDto vehicleDto, Guid id)
     {
-        VehicleModel vehicleModel = VehicleRestMapper.ToModel(vehicleDto);
-        VehicleModel response = vehicleUpdateUseCase.Execute(vehicleModel, id);
+        Vehicle vehicle = VehicleRestMapper.ToModel(vehicleDto);
+        Vehicle response = vehicleUpdateUseCase.Execute(vehicle, id);
         return VehicleRestMapper.ToDto(response);
     }
 

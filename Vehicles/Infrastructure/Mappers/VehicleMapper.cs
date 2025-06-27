@@ -1,23 +1,19 @@
-
-using VehiculosYa.Vehicles.Domain.Models;
-using VehiculosYa.Vehicles.Entity;
-
 namespace VehiculosYa.Vehicles.infrastructure.Mappers;
-
 public class VehicleMapper
 {
-    public static VehicleModel ToModel(VehicleEntity entity)
+    public static Vehicle ToModel(VehicleEntity entity)
     {
-        return new VehicleModel
+        return new Vehicle
         {
             Id = entity.Id,
             Plate = entity.Plate,
             Brand = entity.Brand,
-            Model = entity.Model
+            Model = entity.Model,
+            Kms = entity.Kms
         };
     }
 
-    public static VehicleEntity ToEntity(VehicleModel model)
+    public static VehicleEntity ToEntity(Vehicle model)
     {
         return new VehicleEntity
         {

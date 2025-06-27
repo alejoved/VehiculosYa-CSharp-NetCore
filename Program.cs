@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using VehiculosYa.Common;
-using VehiculosYa.Vehicle.Repository;
-using VehiculosYa.Vehicle.Service;
+using VehiculosYa.Vehicles.Domain.Repositories;
+using VehiculosYa.Vehicles.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,10 +15,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
-builder.Services.AddScoped<IVehicleService, VehicleService>();
-
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
