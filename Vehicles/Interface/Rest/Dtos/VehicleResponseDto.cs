@@ -1,7 +1,8 @@
-namespace VehiculosYa.Vehicle.Dto
+namespace VehiculosYa.Vehicles.Interface.Rest.Dtos
 {
-    public class VehicleDTO
+    public class VehicleResponseDto
     {
+        public Guid Id { get; set; }
         public string Plate { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
