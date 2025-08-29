@@ -1,3 +1,6 @@
+using VehiculosYa.Vehicles.Domain.Models;
+using VehiculosYa.Vehicles.infrastructure.Entities;
+
 namespace VehiculosYa.Vehicles.infrastructure.Mappers;
 public class VehicleMapper
 {

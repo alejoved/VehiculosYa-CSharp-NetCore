@@ -1,10 +1,11 @@
 
+namespace VehiculosYa.Securities.Domain.Models;
 public class Security
 {
-    private Guid Id { get;  set;}
-    private Timestamp Date { get; set; }
-    private string Description { get; set; }
-    private string Type { get; set; }
-    private double Cost { get; set; }
-    private string Status { get; set; }
+    public Guid Id { get; set; }
+    public DateTime Date { get; set; }
+    public string Description { get; set; }
+    public string Type { get; set; }
+    public double Cost { get; set; }
+    public string Status { get; set; }
 }
