@@ -13,4 +13,5 @@ public class AppDbContext : DbContext
     public DbSet<VehicleEntity> VehicleEntity { get; set; }
     public DbSet<SecurityEntity> SecurityEntity { get; set; }
     public DbSet<PenaltyEntity> PenaltyEntity { get; set; }
+    public DbSet<MaintenanceEntity> MaintenanceEntity { get; set; }
 }
