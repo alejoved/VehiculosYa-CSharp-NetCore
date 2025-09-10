@@ -1,3 +1,6 @@
+using VehiculosYa.Maintenances.Domain.Models;
+using VehiculosYa.Maintenances.infrastructure.Entities;
+
 namespace VehiculosYa.Maintenances.infrastructure.Mappers;
 public class MaintenanceMapper
 {
@@ -6,23 +9,23 @@ public class MaintenanceMapper
         return new Maintenance
         {
             Id = entity.Id,
+            Date = entity.Date,
             Description = entity.Description,
             Type = entity.Type,
-            Amount = entity.Amount,
-            Status = entity.Status
+            Cost = entity.Cost,
             
         };
     }
 
-    public static PenaltyEntity ToEntity(Penalty model)
+    public static MaintenanceEntity ToEntity(Maintenance model)
     {
-        return new PenaltyEntity
+        return new MaintenanceEntity
         {
             Id = model.Id,
+            Date = model.Date,
             Description = model.Description,
             Type = model.Type,
-            Amount = model.Amount,
-            Status = model.Status
+            Cost = model.Cost,
         };
     }
 }

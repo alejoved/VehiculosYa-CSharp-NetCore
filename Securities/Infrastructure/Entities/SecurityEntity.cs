@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VehiculosYa.Securities.infrastructure.Entities
 {
+    [Table("security")]
     public class SecurityEntity
     {
         [Key]

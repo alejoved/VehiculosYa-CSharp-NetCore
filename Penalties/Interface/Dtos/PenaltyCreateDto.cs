@@ -1,6 +1,6 @@
 namespace VehiculosYa.Penalties.Interface.Rest.Dtos
 {
-    public class PenaltyDto
+    public class PenaltyCreateDto
     {
         public string Description { get; set; }
         public string Type { get; set; }

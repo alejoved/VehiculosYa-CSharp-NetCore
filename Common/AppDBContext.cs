@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using VehiculosYa.Maintenances.infrastructure.Entities;
 using VehiculosYa.Securities.infrastructure.Entities;
 using VehiculosYa.Vehicles.infrastructure.Entities;
 

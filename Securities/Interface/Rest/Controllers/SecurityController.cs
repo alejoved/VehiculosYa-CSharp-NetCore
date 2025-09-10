@@ -36,18 +36,18 @@ public class SecurityController : ControllerBase
     }
 
     [HttpPost]
-    public SecurityResponseDto Create(SecurityDto securityDto)
+    public SecurityResponseDto Create(SecurityCreateDto securityCreateDto)
     {
-        Security security = SecurityRestMapper.ToModel(securityDto);
+        Security security = SecurityRestMapper.CreateDtoToModel(securityCreateDto);
         Security response = securityCreateUseCase.Execute(security);
         return SecurityRestMapper.ToDto(response);
 
     }
 
     [HttpPut("{id}")]
-    public SecurityResponseDto Update(SecurityDto securityDto, Guid id)
+    public SecurityResponseDto Update(SecurityUpdateDto securityUpdateDto, Guid id)
     {
-        Security security = SecurityRestMapper.ToModel(securityDto);
+        Security security = SecurityRestMapper.UpdateDtoToModel(securityUpdateDto, id);
         Security response = securityUpdateUseCase.Execute(security, id);
         return SecurityRestMapper.ToDto(response);
     }

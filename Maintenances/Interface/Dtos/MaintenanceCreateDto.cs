@@ -1,8 +1,7 @@
 namespace VehiculosYa.Maintenances.Interface.Rest.Dtos
 {
-    public class MaintenanceResponseDto
+    public class MaintenanceCreateDto
     {
-        public Guid Id { get; set; }
         public DateTime Date { get; set; }
         public string Type { get; set; }
         public string Description { get; set; }

@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using VehiculosYa.Penalties.Application.Interfaces;
 using VehiculosYa.Penalties.Domain.Models;
 using VehiculosYa.Penalties.Interface.Rest.Dtos;
-using VehiculosYa.Securities.Interface.Rest.Mappers;
+using VehiculosYa.Penalties.Interface.Rest.Mappers;
 
 namespace VehiculosYa.penalties.Interface.Rest.Controller;
 
@@ -37,18 +37,18 @@ public class PenaltyController : ControllerBase
     }
 
     [HttpPost]
-    public PenaltyResponseDto Create(PenaltyDto penaltyDto)
+    public PenaltyResponseDto Create(PenaltyCreateDto penaltyCreateDto)
     {
-        Penalty penalty = PenaltyRestMapper.ToModel(penaltyDto);
+        Penalty penalty = PenaltyRestMapper.CreateDtoToModel(penaltyCreateDto);
         Penalty response = penaltyCreateUseCase.Execute(penalty);
         return PenaltyRestMapper.ToDto(response);
 
     }
 
     [HttpPut("{id}")]
-    public PenaltyResponseDto Update(PenaltyDto penaltyDto, Guid id)
+    public PenaltyResponseDto Update(PenaltyUpdateDto penaltyDto, Guid id)
     {
-        Penalty penalty = PenaltyRestMapper.ToModel(penaltyDto);
+        Penalty penalty = PenaltyRestMapper.UpdateDtoToModel(penaltyDto);
         Penalty response = penaltyUpdateUseCase.Execute(penalty, id);
         return PenaltyRestMapper.ToDto(response);
     }

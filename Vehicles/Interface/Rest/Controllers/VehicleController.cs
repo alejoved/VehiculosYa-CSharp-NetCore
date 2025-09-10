@@ -37,18 +37,18 @@ public class VehicleController : ControllerBase
     }
 
     [HttpPost]
-    public VehicleResponseDto Create(VehicleDto vehicleDto)
+    public VehicleResponseDto Create(VehicleCreateDto vehicleCreateDto)
     {
-        Vehicle vehicle = VehicleRestMapper.ToModel(vehicleDto);
+        Vehicle vehicle = VehicleRestMapper.CreateDtoToModel(vehicleCreateDto);
         Vehicle response = vehicleCreateUseCase.Execute(vehicle);
         return VehicleRestMapper.ToDto(response);
 
     }
 
     [HttpPut("{id}")]
-    public VehicleResponseDto Update(VehicleDto vehicleDto, Guid id)
+    public VehicleResponseDto Update(VehicleUpdateDto vehicleUpdateDto, Guid id)
     {
-        Vehicle vehicle = VehicleRestMapper.ToModel(vehicleDto);
+        Vehicle vehicle = VehicleRestMapper.UpdateDtoToModel(vehicleUpdateDto, id);
         Vehicle response = vehicleUpdateUseCase.Execute(vehicle, id);
         return VehicleRestMapper.ToDto(response);
     }
